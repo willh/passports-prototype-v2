@@ -167,8 +167,7 @@ module.exports = {
     },
     '/relationship-applicant': {
         fields: [
-            'relationship-applicant',
-            'other-why-apply'
+            'relationship-applicant'
         ],
         backLink: './dual-national',
         next: '/third-party-name'
@@ -176,7 +175,8 @@ module.exports = {
     '/third-party-name': {
         fields: [
             'third-party-first-name',
-            'third-party-last-name'
+            'third-party-last-name',
+            'other-why-apply'
         ],
         backLink: './relationship-applicant',
         next: '/parental-responsibility',

@@ -50,6 +50,38 @@ ConfirmForm.prototype.createBreakdown = function (req, values, callback) {
         sections: []
     });
 
+    // third parties
+    var thirdPartyFields = [];
+    response.sections.push({
+        className: 'third-party-details',
+        title: 'Your relationship to the applicant',
+        fields: thirdPartyFields
+    });
+    thirdPartyFields.push({
+        step: this.getEditStep('relationship-applicant-Father'),
+        title: 'Relationship',
+        value: values['relationship-applicant']
+    }, {
+        step: this.getEditStep('relationship-applicant-Father'),
+        title: 'First name',
+        value: values['third-party-first-name']
+    }, {
+        step: this.getEditStep('third-party-name'),
+        title: 'Last name',
+        value: values['third-party-last-name']
+    }, {
+        step: this.getEditStep('other-why-apply'),
+        title: 'Explanation',
+        value: values['other-why-apply']
+    });
+
+    // Logic to remove fields from stack
+    if (values['application-for'] == true) {
+        console.log('DELETE third party fields')
+        response.sections.pop({
+            fields: thirdPartyFields
+        });
+    }
 
     // Old passport
     var oldPassportFields = [];
