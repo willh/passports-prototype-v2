@@ -1,13 +1,25 @@
 module.exports = {
     '/': {
-      controller: require('../../../controllers/tracking'),
+      controller: require('../../../controllers/check-tracking-status'),
       fields: ['reference'],
         next: '/track-email',
     },
     '/track-email': {
         fields: ['age-day', 'age-month', 'age-year'],
         next: '/need-csig',
-        backLink: 'track'
+        backLink: './',
+        forks: [
+          {
+          target: '/send-docs',
+          condition: function(req, res) {
+            return req.session['hmpo-wizard-common']['tracking-status'] == 'send-docs';
+          }
+        },{
+          target: '/csig-completed',
+          condition: function(req, res) {
+            return req.session['hmpo-wizard-common']['tracking-status'] == 'csig-completed';
+          }
+        }],
     },
     '/waiting-for-old-pass': {
         next: '/track'
@@ -21,6 +33,12 @@ module.exports = {
         next: '/../user-contact'
     },
     '/send-book': {
+      next: '../csig/'
+    },
+    '/send-docs': {
+      next: '../csig/'
+    },
+    '/csig-completed': {
       next: '../csig/'
     }
 };
