@@ -7,6 +7,6 @@ app.use(require('hmpo-template-mixins')(fields, { sharedTranslationKey: 'prototy
 
 app.use(wizard(steps, fields, {
   controller: require('../../../controllers/form'),
-  templatePath: 'overseas-not-available' }));
+  templatePath: 'ftas/overseas-not-available' }));
 
 module.exports = app;
