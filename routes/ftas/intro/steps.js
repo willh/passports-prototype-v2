@@ -11,7 +11,7 @@ module.exports = {
         }]
     },
     '/before-you-continue-overseas': {
-        backLink: '/../ftas/overseas/give-contact-details',
+        backLink: '/../overseas/give-contact-details',
         next: '/what-you-need-overseas'
     },
     '/what-you-need': {

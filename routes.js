@@ -92,6 +92,34 @@ app.use('/ftas/photo-code', require('./routes/ftas/photo-code'));
 app.use('/ftas/mismatch', require('./routes/ftas/mismatch'));
 app.use('/ftas/redirect-tracking', require('./routes/ftas/redirect-tracking'));
 
+app.use('/overseas', require('./routes/ftas/overseas'));
+app.use('/overseas-not-eligible', require('./routes/ftas/overseas-not-eligible'));
+app.use('/overseas-first', require('./routes/ftas/overseas-first'));
+app.use('/overseas-lost-change', require('./routes/ftas/overseas-lost-change'));
+app.use('/uploadphoto', require('./routes/ftas/uploadphoto'));
+app.use('/renew', require('./routes/ftas/renew'));
+app.use('/intro', require('./routes/ftas/intro'));
+app.use('/filter', require('./routes/ftas/filter'));
+app.use('/startpage', require('./routes/ftas/startpage'));
+app.use('/startpage-overseas', require('./routes/ftas/startpage-overseas'));
+app.use('/photoguide-short', require('./routes/ftas/photoguide-short'));
+app.use('/photoguide-static', require('./routes/ftas/photoguide-static'));
+app.use('/photoguide-shop', require('./routes/ftas/photoguide-shop'));
+app.use('/takephoto', require('./routes/ftas/takephoto'));
+app.use('/upload', require('./routes/ftas/upload'));
+app.use('/rejectedphoto', require('./routes/ftas/rejectedphoto'));
+app.use('/filter-common-temp', require('./routes/ftas/filter-common-temp'));
+app.use('/startpage-temp', require('./routes/ftas/startpage-temp'));
+app.use('/overseas-not-available', require('./routes/ftas/overseas-not-available'));
+app.use('/throttle', require('./routes/ftas/throttle'));
+app.use('/payment', require('./routes/ftas/payment'));
+app.use('/submission-failed', require('./routes/ftas/submission-failed'));
+app.use('/sar', require('./routes/ftas/sar'));
+app.use('/photo-url', require('./routes/ftas/photo-url'));
+app.use('/photo-code', require('./routes/ftas/photo-code'));
+app.use('/mismatch', require('./routes/ftas/mismatch'));
+app.use('/redirect-tracking', require('./routes/ftas/redirect-tracking'));
+
 
 //csig
 app.use('/csig/track', require('./routes/csig/track'));
